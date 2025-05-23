@@ -1,0 +1,648 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+/* TAILWIND CSS LINKS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* SLICK CAROUSEL LINKS */
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+
+/* Color scheme variables */
+:root {
+  --color-primary: #003366; /* Deep Blue */
+  --color-secondary: #2E865F; /* Emerald Green */
+  --color-accent: #FFD700; /* Gold */
+  --color-background: #F5F5F5; /* Light Gray */
+  --color-text: #333333; /* Charcoal Gray */
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  color: var(--color-text);
+  background-color: #000000;
+  padding-top: 80px; /* Added padding to account for fixed navbar */
+}
+
+/* Navbar is always fixed now, so we don't need these conditional styles 
+html:not([data-scroll="0"]) .navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: var(--color-primary) !important;
+  box-shadow: 0 8px 20px rgba(0, 51, 102, 0.2);
+  transition: 0.3s ease-in-out;
+  padding: 0.5rem 0 !important;
+  z-index: 1000;
+}
+*/
+
+html:not([data-scroll="0"]) .navbar>div>div {
+  height: 4rem;
+}
+
+html:not([data-scroll="0"]) .border-right {
+  height: 3.5rem;
+  border-right-color: rgba(255, 255, 255, 0.2);
+}
+
+html {
+  --scroll-behavior: smooth !important;
+  scroll-behavior: smooth !important;
+}
+
+.navbar {
+  border-bottom: none;
+  background: rgba(0, 0, 0, 0.85); /* Black with transparency for blur effect */
+  backdrop-filter: blur(10px); /* Add blur effect */
+  -webkit-backdrop-filter: blur(10px); /* For Safari support */
+  transition: all 0.3s ease;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 0.75rem 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.hover-underline {
+  display: inline-flex;
+  position: relative;
+  /* color: #ffffff; */
+  justify-content: center;
+  align-items: center;
+}
+
+.hover-underline:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--color-primary);
+  transform-origin: bottom right;
+  transition: transform .25s ease-out;
+}
+
+.hover-underline:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.preline:before {
+  content: "";
+  display: block;
+  width: 90px;
+  height: 2px;
+  background: var(--color-primary);
+  left: 4px;
+  top: 72%;
+  position: absolute;
+}
+
+@media only screen and (max-width: 1024px) {
+  .preline:before {
+    display: none;
+  }
+}
+
+.comma-pos {
+  top: -40px;
+  left: -121px;
+}
+
+.border-right {
+  border-right: 1px solid rgba(46, 134, 95, 0.3); /* Secondary color with transparency */
+  height: 70px;
+  padding-right: 40px;
+}
+
+@media only screen and (max-width: 1150px) {
+  .border-right {
+    height: 0px;
+    border-right: 0px;
+    padding-right: 20px;
+  }
+}
+
+.pd76 {
+  padding-right: 76px !important;
+}
+
+.navbutton {
+  border: 1px solid var(--color-secondary);
+  color: var(--color-text);
+  transition: all 0.3s ease;
+}
+
+.navlinks {
+  color: white;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navlinks:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: var(--color-accent);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.navlinks:hover:after {
+  width: 80%;
+}
+
+.bg-digital {
+  background-image: url("/images/digital/bg.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bg-build {
+  background-image: url('/images/beliefs/bg.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: unset;
+}
+
+.girldoodle {
+  top: 12px;
+  right: -115px;
+}
+
+.marginFeature {
+  margin-top: -500px;
+}
+
+@media only screen and (max-width: 700px) {
+  .marginFeature {
+    margin-top: -341px;
+  }
+}
+
+.pb-70 {
+  padding-bottom: 18rem;
+}
+
+.bg-beliefs {
+  background-image: url('/images/beliefs/swirls.svg');
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: contain;
+}
+
+.position-linkedin {
+  right: 60px;
+  bottom: -57px;
+}
+
+.bg-wework {
+  background-image: url('/images/wework/elipse.svg'), url('/images/wework/vector.svg');
+  background-repeat: no-repeat, no-repeat;
+  background-position: bottom, top right;
+}
+
+.bg-featured {
+  background-image: url('/images/wework/vector.svg');
+  background-repeat: no-repeat;
+  background-position: 100% 35%;
+}
+
+.feature-margin {
+  margin-top: -480px;
+}
+
+@media only screen and (max-width: 768px) {
+  .feature-margin {
+    margin-top: -300px;
+  }
+}
+
+.nextarrow {
+  background-color: var(--color-secondary);
+}
+
+.faq-bg {
+  /* background-image: url('/images/faq/swirl.png');
+  background-repeat: no-repeat;
+  background-size: cover; */
+  background: linear-gradient(120deg, #000033 0%, #FF4500 50%, #FFD700 100%);
+}
+
+.bg-testimonial {
+  background-image: url('/images/wework/elipse.svg'), url('/images/testimonial/boy.svg'), url('/images/testimonial/girl.svg');
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-position: 55%, 84% 26%, 12% 18%;
+}
+
+@media only screen and (max-width: 1400px) {
+  .bg-testimonial {
+    background-position: 80%, top right, top left;
+  }
+}
+
+
+.manageTabs {
+  border: 1px solid #DBDBDB;
+  box-shadow: 0px 4px 5px 1px rgba(193, 193, 193, 0.35);
+  border-radius: 20px;
+}
+
+.test-pos {
+  left: 42px;
+  top: 44px;
+}
+
+.test-sha {
+  box-shadow: 0px 5px 10px rgba(89, 104, 118, 0.05);
+}
+
+.star {
+  filter: invert(79%) sepia(53%) saturate(1095%) hue-rotate(330deg) brightness(101%) contrast(96%);
+}
+
+.article-img {
+  top: 225px;
+  right: 30px;
+}
+
+.w-345 {
+  width: 400px;
+}
+
+.bg-joinus {
+  background-image: url('/images/joinus/horn.svg'), url('/images/joinus/paint.svg');
+  background-repeat: no-repeat, no-repeat;
+  background-position: 84% 109%, 12% 18%;
+}
+
+.footer-icons {
+  box-shadow: 0px 19px 28px rgba(0, 0, 0, 0.1);
+  background-color: var(--color-primary);
+  border-radius: 50%;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+
+.footer-icons {
+  transition: .5s;
+}
+
+.footer-icons:hover {
+  transform: translateY(-8px);
+}
+
+.space-links {
+  transition: .3s;
+}
+
+.space-links:hover {
+  letter-spacing: 1px;
+}
+
+.dance-text {
+  font-family: 'Dancing Script', cursive !important;
+  transform: rotate(-10.06deg);
+  text-align: center;
+  margin-left: -340px;
+}
+
+@media only screen and (max-width: 466px) {
+  .dance-text {
+    margin-left: -265px;
+  }
+}
+
+.toggleImage {
+  position: absolute;
+  right: 47rem;
+  top: 2rem;
+}
+
+@media only screen and (max-width: 1250px) {
+  .toggleImage {
+    display: none;
+  }
+}
+
+.joinButton {
+  padding: 20px 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 1023px) {
+  .joinButton {
+    padding: 20px 92px;
+  }
+}
+
+
+/* SLICK  */
+.slick-prev,
+.slick-next {
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  top: 40% !important;
+  display: block;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  transform: translate(0, -50%);
+  cursor: pointer;
+  color: transparent;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.slick-next {
+  right: -70px !important;
+}
+
+.slick-prev {
+  left: -60px !important;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  font-family: 'slick';
+  font-size: 17px;
+  line-height: 1;
+  opacity: .75;
+  color: var(--color-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width: 1500px) {
+  .slick-arrow {
+    display: none!important;
+  }
+}
+
+.imageContainer {
+  max-width: 100%;
+  max-height: 100%;
+  position: relative;
+}
+
+.imageContainer Image {
+  width: 100%;
+  vertical-align: top;
+}
+
+.imageContainer:after {
+  content: '\A';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 51, 102, 0.6); /* Using primary color with transparency */
+  opacity: 0;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  border-radius: 20px;
+}
+
+.imageContainer:hover:after {
+  opacity: 1;
+}
+
+.imageContainer:hover>a>button {
+  display: block;
+}
+
+.manage > div:nth-child(2) {
+  /* background-color: var(--color-primary) !important; */
+  color: white;
+}
+
+.manage > div:nth-child(2) button {
+  color: white;
+  background-color: var(--color-accent);
+}
+
+.manage > div:nth-child(2) h3 {
+  color: var(--color-secondary);
+}
+
+/* Course carousel custom styles */
+.carousel-container .slick-slide {
+  padding: 10px;
+  height: auto;
+}
+
+.carousel-container .slick-track {
+  display: flex;
+  gap: 0;
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
+.carousel-container .slick-slide > div {
+  height: 100%;
+}
+
+.carousel-container .slick-dots li button:before {
+  color: var(--color-primary);
+  opacity: 0.3;
+}
+
+.carousel-container .slick-dots li.slick-active button:before {
+  color: var(--color-accent);
+  opacity: 1;
+}
+
+.carousel-container .slick-prev,
+.carousel-container .slick-next {
+  width: 50px;
+  height: 50px;
+  z-index: 15;
+}
+
+.carousel-container .slick-prev {
+  left: -60px;
+}
+
+.carousel-container .slick-next {
+  right: -60px;
+}
+
+.carousel-container .slick-prev:before, 
+.carousel-container .slick-next:before {
+  color: var(--color-accent);
+  font-size: 24px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .carousel-container .slick-prev {
+    left: -40px;
+  }
+  
+  .carousel-container .slick-next {
+    right: -40px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .carousel-container .slick-prev {
+    left: -30px;
+  }
+  
+  .carousel-container .slick-next {
+    right: -30px;
+  }
+}
+
+/* Flip Card Styles */
+.perspective-1000 {
+    perspective: 1000px;
+}
+
+.transform-style-3d {
+    transform-style: preserve-3d;
+}
+
+.backface-hidden {
+    backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+    transform: rotateY(180deg);
+}
+
+/* Remove hover effect since we're using click now */
+/* .hover\:rotate-y-180:hover {
+    transform: rotateY(180deg);
+} */
+
+/* Ensure the back of the card is properly positioned */
+.rotate-y-180 {
+    transform: rotateY(180deg);
+}
+
+/* Gradient Animation */
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.beliefs-bend {
+  transform: perspective(900px) rotate3d(1, 1, 0, 18deg) scale(1.04);
+  box-shadow: 0 16px 40px 0 rgba(0,0,0,0.22);
+}
+
+.testimonial-gradient-bg {
+  background: linear-gradient(120deg, #FF8C00 0%, #FF4500 50%, #FFD700 100%);
+}
+
+.blog-gradient-bg {
+  background: linear-gradient(120deg, #FFD700 0%, #FF8C00 50%, #FF4500 100%);
+}
+
+.testimonial-card-gradient, .blog-card-gradient {
+  background: linear-gradient(270deg, #FF4500, #FFD700, #FF8C00, #FFD700, #FF4500);
+  background-size: 400% 400%;
+  /* animation: animated-gradient 6s ease infinite; */
+  border-radius: 1.5rem;
+  padding: 1px; /* Further reduced padding */
+}
+
+.testimonial-card-heading, .blog-card-heading {
+  background: linear-gradient(to right, #FF8C00, #FF4500, #FFD700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.testimonial-gradient-btn, .blog-gradient-btn {
+  background: linear-gradient(to right, #FF8C00, #FFD700);
+  border: none;
+  font-weight: bold;
+  color: black !important;
+  box-shadow: 0 0 20px rgba(255, 165, 0, 0.2);
+  transition: background 0.3s, color 0.3s;
+}
+
+.testimonial-gradient-btn:hover, .blog-gradient-btn:hover {
+  background: linear-gradient(to right, #FFD700, #FF8C00);
+  color: #000 !important;
+}
+
+.footer-lava-gradient {
+  background: radial-gradient(ellipse at 50% 0%, #000 0%, #1a0000 20%, #b80000 55%, #ff4500 75%, #ff8c00 90%, #ff6f61 100%);
+}
+
+.footer-bubbles {
+  pointer-events: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 8rem;
+  z-index: 20;
+}
+
+.footer-bubble {
+  position: absolute;
+  bottom: 0;
+  border-radius: 50%;
+  opacity: 0.7;
+  background: radial-gradient(circle at 60% 40%, #FFD700 0%, #FF8C00 60%, #FF4500 100%);
+  animation: bubble-rise 4s linear infinite;
+}
+
+/* Randomize bubble size, position, and delay */
+.bubble-0 { left: 10%; width: 18px; height: 18px; animation-delay: 0s; }
+.bubble-1 { left: 25%; width: 12px; height: 12px; animation-delay: 1.2s; }
+.bubble-2 { left: 40%; width: 22px; height: 22px; animation-delay: 0.7s; }
+.bubble-3 { left: 55%; width: 14px; height: 14px; animation-delay: 2.1s; }
+.bubble-4 { left: 70%; width: 20px; height: 20px; animation-delay: 0.4s; }
+.bubble-5 { left: 80%; width: 10px; height: 10px; animation-delay: 1.7s; }
+.bubble-6 { left: 15%; width: 16px; height: 16px; animation-delay: 2.5s; }
+.bubble-7 { left: 35%; width: 13px; height: 13px; animation-delay: 1.9s; }
+.bubble-8 { left: 60%; width: 19px; height: 19px; animation-delay: 0.9s; }
+.bubble-9 { left: 90%; width: 15px; height: 15px; animation-delay: 2.8s; }
+
+@keyframes bubble-rise {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.7;
+  }
+  70% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-120px) scale(1.2);
+    opacity: 0;
+  }
+}
+
+.icon-gradient-bg {
+  background: radial-gradient(circle at center, #FFD700 0%, #FF8C00 50%, #FF4500 100%);
+}
