@@ -6,9 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "predeploy": "npm run build",
-    "deploy":  "touch out/.nojekyll && gh-pages -d out --dotfiles"
+    "lint": "next lint"
   },
   "dependencies": {
     "@headlessui/react": "^2.1.9",
@@ -29,7 +27,6 @@
     "typescript": "5.6.2"
   },
   "devDependencies": {
-    "@types/react-slick": "^0.23.13",
-    "gh-pages": "^6.3.0"
+    "@types/react-slick": "^0.23.13"
   }
 }
