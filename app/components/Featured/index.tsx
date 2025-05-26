@@ -1,5 +1,5 @@
 "use client"
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { StarIcon } from '@heroicons/react/24/solid';
@@ -103,14 +103,16 @@ const RatingStars = ({ rating }: { rating: number }) => {
 };
 
 const Featured = () => {
+    const [flipped, setFlipped] = useState<number | null>(null);
     const settings = {
         dots: true,
         infinite: true,
         slidesToShow: 3,
         slidesToScroll: 1,
         arrows: false, // Hide arrows in this view
-        autoplay: false,
-        speed: 500,
+        autoplay: true, // Enable autoplay
+        autoplaySpeed: 2000, // 2 seconds per slide
+        speed: 1000, // 1 second transition
         cssEase: "linear",
         responsive: [
             {
@@ -136,6 +138,10 @@ const Featured = () => {
         ]
     };
 
+    const handleFlip = (index: number) => {
+        setFlipped(flipped === index ? null : index);
+    };
+
     return (
         <div className="bg-black py-20 px-4 sm:px-6 lg:px-8" id="courses-section">
             <div className="mx-auto max-w-7xl">
@@ -156,67 +162,84 @@ const Featured = () => {
                         {courseData.map((course, i) => (
                             <div key={i} className="px-3 h-full">
                                 <div className="p-[2px] rounded-2xl bg-gradient-to-r from-[#FF4500] via-[#FF8C00] to-[#FFD700]">
-                                    <div className="bg-black rounded-xl overflow-hidden shadow-lg h-full flex flex-col">
-                                        <div className="relative h-52 overflow-hidden">
-                                            <Image 
-                                                src={course.imgSrc} 
-                                                alt={course.title}
-                                                width={400}
-                                                height={225}
-                                                className="w-full h-full object-cover"
-                                                unoptimized={true} // Add unoptimized for Vercel export
-                                            />
-                                            {course.bestSeller && (
-                                                <div className="absolute right-4 bottom-4">
-                                                    <div className="px-4 py-2 rounded-full font-bold text-xs bg-black" style={{
-                                                        color: 'transparent',
-                                                        backgroundImage: 'linear-gradient(to right, #FF4500, #FFD700, #FF8C00, #FFD700)',
+                                    <div
+                                        className="relative h-full perspective-1000"
+                                        onClick={() => handleFlip(i)}
+                                        style={{ cursor: 'pointer' }}
+                                    >
+                                        <div className={`transition-transform duration-500 w-full h-full transform-style-3d ${flipped === i ? 'rotate-y-180' : ''}`}
+                                            style={{ minHeight: 400 }}
+                                        >
+                                            {/* Front Side */}
+                                            <div className="bg-black rounded-xl overflow-hidden shadow-lg h-full flex flex-col backface-hidden absolute w-full h-full top-0 left-0">
+                                                <div className="relative h-52 overflow-hidden">
+                                                    <Image 
+                                                        src={course.imgSrc} 
+                                                        alt={course.title}
+                                                        width={400}
+                                                        height={225}
+                                                        className="w-full h-full object-cover"
+                                                        unoptimized={true}
+                                                    />
+                                                    {course.bestSeller && (
+                                                        <div className="absolute right-4 bottom-4">
+                                                            <div className="px-4 py-2 rounded-full font-bold text-xs bg-black" style={{
+                                                                color: 'transparent',
+                                                                backgroundImage: 'linear-gradient(to right, #FF4500, #FFD700, #FF8C00, #FFD700)',
+                                                                WebkitBackgroundClip: 'text',
+                                                                WebkitTextFillColor: 'transparent',
+                                                                backgroundClip: 'text'
+                                                            }}>
+                                                                BEST SELLER
+                                                            </div>
+                                                        </div>
+                                                    )}
+                                                </div>
+                                                <div className="p-6 flex flex-col flex-grow text-white">
+                                                    <h3 className="text-xl font-bold mb-2 line-clamp-2 h-14" style={{
+                                                        background: 'linear-gradient(to right, #FF4500, #FFD700, #FF8C00, #FFD700)',
                                                         WebkitBackgroundClip: 'text',
                                                         WebkitTextFillColor: 'transparent',
                                                         backgroundClip: 'text'
                                                     }}>
-                                                        BEST SELLER
+                                                        {course.title}
+                                                    </h3>
+                                                    <p className="mb-4 text-gray-400">{course.instructor}</p>
+                                                    <div className="flex items-center mb-4">
+                                                        <span className="text-2xl font-bold mr-2" style={{
+                                                            background: 'linear-gradient(to right, #FF4500, #FFD700, #FF8C00, #FFD700)',
+                                                            WebkitBackgroundClip: 'text',
+                                                            WebkitTextFillColor: 'transparent',
+                                                            backgroundClip: 'text'
+                                                        }}>{course.rating}</span>
+                                                        <RatingStars rating={course.rating} />
                                                     </div>
                                                 </div>
-                                            )}
-                                        </div>
-                                        
-                                        <div className="p-6 flex flex-col flex-grow text-white">
-                                            <h3 className="text-xl font-bold mb-2 line-clamp-2 h-14" style={{
-                                                background: 'linear-gradient(to right, #FF4500, #FFD700, #FF8C00, #FFD700)',
-                                                WebkitBackgroundClip: 'text',
-                                                WebkitTextFillColor: 'transparent',
-                                                backgroundClip: 'text'
-                                            }}>
-                                                {course.title}
-                                            </h3>
-                                            
-                                            <p className="mb-4 text-gray-400">{course.instructor}</p>
-                                            
-                                            <div className="flex items-center mb-4">
-                                                <span className="text-2xl font-bold mr-2" style={{
-                                                    background: 'linear-gradient(to right, #FF4500, #FFD700, #FF8C00, #FFD700)',
-                                                    WebkitBackgroundClip: 'text',
-                                                    WebkitTextFillColor: 'transparent',
-                                                    backgroundClip: 'text'
-                                                }}>{course.rating}</span>
-                                                <RatingStars rating={course.rating} />
                                             </div>
-                                            
-                                            {/* Features List */}
-                                            <div className="space-y-3 mb-6 text-gray-300">
-                                                <p className="text-base">• Comprehensive course materials</p>
-                                                <p className="text-base">• Lifetime access to content</p>
-                                                <p className="text-base">• Certificate of completion</p>
-                                                <p className="text-base">• Expert instructor support</p>
-                                                <p className="text-base">• Community access</p>
-                                            </div>
-
-                                            {/* Enroll Button */}
-                                            <div className="mt-auto">
-                                                <button className="w-full bg-gradient-to-r from-[#FF4500] via-[#FF8C00] to-[#FFD700] text-black font-bold py-3 px-6 rounded-full">
-                                                    Enroll Now
-                                                </button>
+                                            {/* Back Side */}
+                                            <div className="bg-black rounded-xl overflow-hidden shadow-lg h-full flex flex-col backface-hidden absolute w-full h-full top-0 left-0 rotate-y-180">
+                                                <div className="p-6 flex flex-col flex-grow text-white justify-center items-center">
+                                                    <h3 className="text-xl font-bold mb-2 text-center" style={{
+                                                        background: 'linear-gradient(to right, #FF4500, #FFD700, #FF8C00, #FFD700)',
+                                                        WebkitBackgroundClip: 'text',
+                                                        WebkitTextFillColor: 'transparent',
+                                                        backgroundClip: 'text'
+                                                    }}>
+                                                        {course.title}
+                                                    </h3>
+                                                    <div className="space-y-3 mb-6 text-gray-300 text-center">
+                                                        <p className="text-base">• {course.classes} Classes</p>
+                                                        <p className="text-base">• {course.students} Students</p>
+                                                        <p className="text-base">• ${course.price} Only</p>
+                                                        <p className="text-base">• Certificate of completion</p>
+                                                        <p className="text-base">• Community access</p>
+                                                    </div>
+                                                    <div className="mt-auto w-full flex justify-center">
+                                                        <button className="bg-gradient-to-r from-[#FF4500] via-[#FF8C00] to-[#FFD700] text-black font-bold py-3 px-6 rounded-full w-full">
+                                                            Enroll Now
+                                                        </button>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
