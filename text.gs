@@ -1,5 +1,5 @@
 // Configuration
-const DOC_TEMPLATE_ID = '1oLqhvwL-nmEtfn0tjS-0w0ohdfWakgFA9V-VasP3kdc'; // Replace with your Doc template ID
+const DOC_TEMPLATE_ID = '1F_YNFgnKwnesaXXgk6l2D2t-6FN6kgp8Vwqg4mbJkzk'; // Replace with your Doc template ID
 const DEST_FOLDER_ID = '1fIptyR9dgxJNQPuVn-TxzBlgLiYJJ3OY'; // Replace with your Folder ID
 const UNSPLASH_ACCESS_KEY = 'zfEChoVVOefgkh5IStJEfDidClgdOdeQGjaQVWis1jI'; // Your Unsplash API Key
 const BACKGROUND_IMAGE_ID = '14pdT21HfM905E3uFG2dtR09Rmw2Jmjb9'; // Background image ID
@@ -188,7 +188,7 @@ function getPlaceDescription(place) {
     "FROST MAGICAL ICE": "Frost Magical Ice of Siam - Transfers if included + Ticket if Includeds - without boots. Will be open from 09:00 AM to 07:00 PM. Duration: 2-3 hours. Visit Frost Magical Ice of Siam's expansive 30,000 square metre winter wonderland where the temperature drops to a chilly level of -10°C, with intricate ice sculptures. Discover 'The Himmapan' and 'Siam Heaven' zones, showcasing detailed ice sculptures depicting mythical creatures and heavenly scenes inspired by Thai culture. Visit Frost Village for an icy adventure, featuring beautifully crafted ice houses and finely crafted sculptures. Have fun in a playroom housed inside Frost Magical Ice of Siam and enjoy exhilarating ice slides, adding excitement to your icy adventure.",
    
     // Bangkok attractions
-    "BANGKOK": "Bangkok On the Leisure day:- On leisure days you can explore your own nearby palace like – VICTORY MONUMENT MARKET, SAMPENG MARKET, UNION MALL, TALAD ROT FAI SRINAKARIN NIGHT MARKET, PANTIP PLAZA, SIAM CENTER, PLATINUM FASHION MALL, ASIATIQUE THE RIVERFRONT, MBK CENTER (MA BOON KHRONG CENTER), KHAOSAN ROAD, ICONSIAM, CHINATOWN – BANGKOK, TERMINAL – 21, BTS SKYTRAIN, SIAM PARAGON, LUMPINI PARK, CENTRAL WORLD, CHATUCHAK WEEKEND MARKET.",
+    "BANGKOK LEISURE DAY": "Bangkok On the Leisure day:- On leisure days you can explore your own nearby palace like – VICTORY MONUMENT MARKET, SAMPENG MARKET, UNION MALL, TALAD ROT FAI SRINAKARIN NIGHT MARKET, PANTIP PLAZA, SIAM CENTER, PLATINUM FASHION MALL, ASIATIQUE THE RIVERFRONT, MBK CENTER (MA BOON KHRONG CENTER), KHAOSAN ROAD, ICONSIAM, CHINATOWN – BANGKOK, TERMINAL – 21, BTS SKYTRAIN, SIAM PARAGON, LUMPINI PARK, CENTRAL WORLD, CHATUCHAK WEEKEND MARKET.",
    
     "SAFARI WORLD": "Safari World With Marine Park + Lunch - Shared Transfer. After breakfast at hotel pickup will be done from the hotel lobby and the pickup timing will be:- Between 8:00 AM and 8:30 AM drop you nearby 05:30 pm to 05:45 pm and lunch is included in it. Safari world and marine park timing 9am till 5pm, Activity Duration: 6-8 Hours (Approx) Monday closed. Safari world and marine park includes:- SEA LION SHOW, COWBOY STUNT, ELEPHANT SHOW, DOLPHIN SHOW, SPY WAR, BIRD SHOW AND BEAUTIFUL AQUATIC WILDLIFE. (You can do any show based on time limit). Visit Safari World Bangkok, which is separated into two themes, to see both land and marine animals. Explore the Safari Park\'s animal kingdom to see a variety of wildlife, including giraffes, zebras, tigers, and lions, living in their natural environments. Watch seals, sharks, and other aquatic life swim in the Marine Park aquarium and be in awe of their unmatched beauty. Don\'t miss out on 7 spectacular performances throughout the day such as the elephant show, dolphin show, bird show, and more!",
    
@@ -204,7 +204,9 @@ function getPlaceDescription(place) {
    
     "DREAM WORLD": "Dream World + Snow Town + Lunch Bangkok / Without Lunch - (Transfers if included + Ticket if Included). After breakfast from the hotel, you will pick from hotel lobby and the pickup timing will be:- From hotel lobby at 10:00 AM & drop back to hotel around 05:00 PM, Duration 5 to 6 hours (approx.) Dream World & Snow Town in Bangkok, Admission Ticket if Included included. Hassle-free pickup and drop-off at your Bangkok hotel. The shows like The Colors of the World Parade, Animal Show, exciting Hollywood Action, or some mind-boggling street performance. Experience non-stop fun at Dream World, from adrenaline-pumping roller coasters to beautiful, fairy-tale landscapes perfect for creating unforgettable memories. Step into themed zones like Snow Town, where real snow and winter activities let you escape to a frosty wonderland even in Southeast Asia's tropical climate. Feel the adrenaline rush as you race through high-speed loops and jaw-dropping twists on Thunder Loop, one of Thailand's most extreme roller coasters. Enjoy the amazing Viking Ship ride that takes you to the sky, giving you a thrilling experience and spectacular 360-degree views of Dream World and its surroundings. Stroll through a world of giants at The Giant's Garden, where everything is magnified, creating a surreal and magical environment that feels like stepping into a storybook.",
    
-    "TEMPLE TOUR": "En Route Bangkok Temple Tour (Golden Buddha + Marble Buddha + Gems Gallery) - Transfers if included + Ticket if Includeds. After breakfast from the hotel, you will pick from hotel lobby and the pickup timing will be in between 10:30am - 10:45am drop will be around 02:00 pm to 02:30 pm. En route the Half Day Temple Tour Bangkok Duration: 4 hours (approx). Half day Bangkok temple tour includes:- WAT BENCHAMABOPHIT (THE MARBLE TEMPLE) AND WAT TRAIMIT (THE GOLDEN BUDDHA TEMPLE). Get picked up from your hotel in Bangkok and sit comfortably and prepare yourself for the upcoming wonderful journey and get ready to explore some of the iconic locations in Bangkok. Embark on this 4-hour trip to the iconic temples of Bangkok and learn about the culture and traditions of Thailand. Interact with the locals and make some friends. Start your half-day temple tour in Bangkok by visiting the Wat Benchamabophit, which is also called Marble Temple. Stop at this Marble Temple for 1 hour and see the outstanding combination of Italian Carrara marble and classical Thai architecture. After that, head over to the Wat Traimit, Temple of the Golden Buddha. It's officially titled Phra Phuttha Maha Suwana Patimakon, which is a golden Maravijaya Attitude seated Buddharupa statue and weighs around 5.5 tonnes.",
+    "EN ROUTE BANGKOK TEMPLE TOUR": "En Route Bangkok Temple Tour (Golden Buddha + Marble Buddha + Gems Gallery) - Transfers if included + Ticket if Includeds. After breakfast from the hotel, you will pick from hotel lobby and the pickup timing will be in between 10:30am - 10:45am drop will be around 02:00 pm to 02:30 pm. En route the Half Day Temple Tour Bangkok Duration: 4 hours (approx). Half day Bangkok temple tour includes:- WAT BENCHAMABOPHIT (THE MARBLE TEMPLE) AND WAT TRAIMIT (THE GOLDEN BUDDHA TEMPLE). Get picked up from your hotel in Bangkok and sit comfortably and prepare yourself for the upcoming wonderful journey and get ready to explore some of the iconic locations in Bangkok. Embark on this 4-hour trip to the iconic temples of Bangkok and learn about the culture and traditions of Thailand. Interact with the locals and make some friends. Start your half-day temple tour in Bangkok by visiting the Wat Benchamabophit, which is also called Marble Temple. Stop at this Marble Temple for 1 hour and see the outstanding combination of Italian Carrara marble and classical Thai architecture. After that, head over to the Wat Traimit, Temple of the Golden Buddha. It's officially titled Phra Phuttha Maha Suwana Patimakon, which is a golden Maravijaya Attitude seated Buddharupa statue and weighs around 5.5 tonnes.",
+
+    "BANGKOK TEMPLE TOUR": "Bangkok Temple Tour - Transfers if included + Ticket if Includeds. After breakfast from the hotel, you will pick from hotel lobby and the pickup timing will be in between 10:30am - 10:45am drop will be around 02:00 pm to 02:30 pm. Half Day Temple Tour Bangkok Duration: 4 hours (approx). Half day Bangkok temple tour includes:- WAT BENCHAMABOPHIT (THE MARBLE TEMPLE) AND WAT TRAIMIT (THE GOLDEN BUDDHA TEMPLE). Get picked up from your hotel in Bangkok and sit comfortably and prepare yourself for the upcoming wonderful journey and get ready to explore some of the iconic locations in Bangkok. Embark on this 4-hour trip to the iconic temples of Bangkok and learn about the culture and traditions of Thailand. Interact with the locals and make some friends. Start your half-day temple tour in Bangkok by visiting the Wat Benchamabophit, which is also called Marble Temple. Stop at this Marble Temple for 1 hour and see the outstanding combination of Italian Carrara marble and classical Thai architecture. After that, head over to the Wat Traimit, Temple of the Golden Buddha. It's officially titled Phra Phuttha Maha Suwana Patimakon, which is a golden Maravijaya Attitude seated Buddharupa statue and weighs around 5.5 tonnes.",
     
     // Phuket attractions
     "PHI PHI ISLAND": "PHI PHI ISLAND BY SPEED BOAT WITH LUNCH -(SHARED TRANSFER) (EXCLUDING NATIONAL PARK FEES). After breakfast from the hotel, you will pick from hotel lobby and the pickup timing will be:- Pickup in between 07:30 am - 08:00 am drop will be around 05:00 pm to 05:30 pm. Full day phi phi island tour included - 2 BIG ISLANDS -KOH PHI PHI DON AND KOH PHI PHI LE, AND - KOH MAYA BAY & VIKING CAVE. A visit to Phuket would not be complete without a visit to Phi Phi Island. It's the topic of conversation for travelers all over Thailand. Regarded as one of the most beautiful islands in the world, with stunning scenery, beautiful beaches, and bays. Soak up the sunshine on remote beaches with time to swim at your leisure.",
@@ -252,24 +254,24 @@ function getPlaceDescription(place) {
     "KOH SAMUI LEISURE": "KOH SAMUI ON THE LEISURE DAY. After having breakfast you can go nearby places in Koh Samui i.e., Chaweng Beach, Lamai Beach, Wat Phra Yai, Angthong National Marine Park, Big Buddha Temple, Hin Ta & Hin Yai Rocks, Na Muang Waterfall, Wat Plai Laem, Fisherman's village, Secret Buddha Garden, Lamai Sunday Night Market, Samui Aquarium and Tiger Zoo and many more. Explore!",
     
     // Transfer descriptions
-    "TRANSFER FROM BANGKOK AIRPORT TO PATTAYA HOTEL": "Arrival at Bangkok airport - meet & greet check in at Pattaya hotel. Day on leisure, overnight stay at hotel.",
+    "TRANSFER FROM BANGKOK AIRPORT TO PATTAYA HOTEL": "Arrival at Bangkok airport - meet & greet check in at Pattaya hotel. overnight stay at hotel.",
     
     "TRANSFER FROM BANGKOK HOTEL TO BANGKOK AIRPORT": "After breakfast, checkout from your hotel. You will be picked up and transferred to the airport to catch your flight back home. Your trip ends with sweet memories. Have a safe flight.",
     
     "TRANSFER FROM PATTAYA HOTEL TO BANGKOK HOTEL": "After a scrumptious breakfast, check out from the hotel & transfer to Bangkok via private transfer and explore the Sukhmvit & Pratunam area.",
     
-    "TRANSFER FROM BANGKOK AIRPORT TO BANGKOK HOTEL": "Arrival at Bangkok airport - meet & greet check in at Bangkok hotel. Day on leisure, overnight stay at hotel.",
+    "TRANSFER FROM BANGKOK AIRPORT TO BANGKOK HOTEL": "Arrival at Bangkok airport - meet & greet check in at Bangkok hotel. overnight stay at hotel.",
     
     "TRANSFER FROM PATTAYA HOTEL TO BANGKOK AIRPORT": "After a scrumptious breakfast, check out from hotel & transfer to Bangkok hotel.",
     
     "TRANSFER FROM BANGKOK HOTEL TO PATTAYA HOTEL": "After a scrumptious breakfast, check out from the hotel & transfer to Pattaya via private transfer and explore the Jomtien beach, pattaya beach, Wong Amatbeach, Naklua beaches area.",
     
     // New transfer descriptions
-    "TRANSFER FROM PHUKET AIRPORT TO KRABI HOTEL": "Arrival at Phuket airport - meet & greet check in at Krabi hotel. Day on leisure, overnight stay at hotel.",
+    "TRANSFER FROM PHUKET AIRPORT TO KRABI HOTEL": "Arrival at Phuket airport - meet & greet check in at Krabi hotel. overnight stay at hotel.",
     
-    "TRANSFER FROM KRABI AIRPORT TO KRABI HOTEL": "Arrival at Krabi airport - meet & greet check in at Krabi hotel. Day on leisure, overnight stay at hotel.",
+    "TRANSFER FROM KRABI AIRPORT TO KRABI HOTEL": "Arrival at Krabi airport - meet & greet check in at Krabi hotel. overnight stay at hotel.",
     
-    "TRANSFER FROM PHUKET AIRPORT TO PHUKET HOTEL": "Arrival at Phuket airport - meet & greet check in at Phuket hotel. Day on leisure, overnight stay at hotel.",
+    "TRANSFER FROM PHUKET AIRPORT TO PHUKET HOTEL": "Arrival at Phuket airport - meet & greet check in at Phuket hotel. overnight stay at hotel.",
     
     "TRANSFER FROM PHUKET HOTEL TO PHUKET AIRPORT": "After breakfast, checkout from your hotel. You will be picked up and transferred to the airport to catch your flight back home. Your trip ends with sweet memories. Have a safe flight.",
     
@@ -301,7 +303,60 @@ function getPlaceDescription(place) {
 
     "Dinner at an Indian Restaurant":"Have Amazing Dinner at the Indian Restauarnt",
 
-    "Lunch at an Indian Restaurant":"Have Amazing Lunch at the Indian Restauarnt"
+    "Lunch at an Indian Restaurant":"Have Amazing Lunch at the Indian Restauarnt",
+
+    // New transfer descriptions
+    "SUVARNABHUMI AIRPORT TO BANGKOK HOTEL - PVT": "Arrival at Suvarnabhumi Airport - meet & greet and transfer to your Bangkok hotel. overnight stay at hotel.",
+    
+    "BANGKOK HOTEL TO SUVARNABHUMI AIRPORT - PVT": "After breakfast, checkout from your hotel. You will be picked up and transferred to Suvarnabhumi Airport to catch your flight. Your trip ends with sweet memories. Have a safe flight.",
+    
+    "SUVARNABHUMI AIRPORT TO PHUKET HOTEL - PVT": "Arrival at Suvarnabhumi Airport - meet & greet and transfer to your Phuket hotel. overnight stay at hotel.",
+    
+    "PHUKET HOTEL TO SUVARNABHUMI AIRPORT - PVT": "After breakfast, checkout from your hotel. You will be picked up and transferred to Suvarnabhumi Airport to catch your flight. Your trip ends with sweet memories. Have a safe flight.",
+    
+    "SUVARNABHUMI AIRPORT TO KRABI HOTEL - PVT": "Arrival at Suvarnabhumi Airport - meet & greet and transfer to your Krabi hotel. overnight stay at hotel.",
+    
+    "KRABI HOTEL TO SUVARNABHUMI AIRPORT - PVT": "After breakfast, checkout from your hotel. You will be picked up and transferred to Suvarnabhumi Airport to catch your flight. Your trip ends with sweet memories. Have a safe flight.",
+    
+    "SUVARNABHUMI AIRPORT TO DMK AIRPORT - PVT": "Transfer from Suvarnabhumi Airport to Don Mueang Airport (DMK) for your connecting flight. Professional driver will assist with your luggage and ensure a comfortable journey between airports.",
+    
+    "DMK AIRPORT TO SUVARNABHUMI AIRPORT - PVT": "Transfer from Don Mueang Airport (DMK) to Suvarnabhumi Airport for your connecting flight. Professional driver will assist with your luggage and ensure a comfortable journey between airports.",
+    
+    "SUVARNABHUMI AIRPORT TO PATTAYA HOTEL - PVT": "Arrival at Suvarnabhumi Airport - meet & greet and transfer to your Pattaya hotel. overnight stay at hotel.",
+    
+    "PATTAYA HOTEL TO SUVARNABHUMI AIRPORT - PVT": "After breakfast, checkout from your hotel. You will be picked up and transferred to Suvarnabhumi Airport to catch your flight. Your trip ends with sweet memories. Have a safe flight.",
+    
+    "SUVARNABHUMI AIRPORT TO PHUKET AIRPORT - PVT": "Transfer from Suvarnabhumi Airport to Phuket Airport for your connecting flight. Professional driver will assist with your luggage and ensure a comfortable journey between airports.",
+    
+    "PHUKET AIRPORT TO SUVARNABHUMI AIRPORT - PVT": "Transfer from Phuket Airport to Suvarnabhumi Airport for your connecting flight. Professional driver will assist with your luggage and ensure a comfortable journey between airports.",
+    
+    "SUVARNABHUMI AIRPORT TO KRABI AIRPORT - PVT": "Transfer from Suvarnabhumi Airport to Krabi Airport for your connecting flight. Professional driver will assist with your luggage and ensure a comfortable journey between airports.",
+    
+    "KRABI AIRPORT TO SUVARNABHUMI AIRPORT - PVT": "Transfer from Krabi Airport to Suvarnabhumi Airport for your connecting flight. Professional driver will assist with your luggage and ensure a comfortable journey between airports.",
+    
+    "SUVARNABHUMI AIRPORT TO PATTAYA AIRPORT - PVT": "Transfer from Suvarnabhumi Airport to Pattaya Airport for your connecting flight. Professional driver will assist with your luggage and ensure a comfortable journey between airports.",
+    
+    "PATTAYA AIRPORT TO SUVARNABHUMI AIRPORT - PVT": "Transfer from Pattaya Airport to Suvarnabhumi Airport for your connecting flight. Professional driver will assist with your luggage and ensure a comfortable journey between airports.",
+    
+    "DMK AIRPORT TO PHUKET HOTEL - PVT": "Arrival at Don Mueang Airport (DMK) - meet & greet and transfer to your Phuket hotel. overnight stay at hotel.",
+    
+    "PHUKET HOTEL TO DMK AIRPORT - PVT": "After breakfast, checkout from your hotel. You will be picked up and transferred to Don Mueang Airport (DMK) to catch your flight. Your trip ends with sweet memories. Have a safe flight.",
+    
+    "DMK AIRPORT TO BANGKOK HOTEL - PVT": "Arrival at Don Mueang Airport (DMK) - meet & greet and transfer to your Bangkok hotel. overnight stay at hotel.",
+    
+    "BANGKOK HOTEL TO DMK AIRPORT - PVT": "After breakfast, checkout from your hotel. You will be picked up and transferred to Don Mueang Airport (DMK) to catch your flight. Your trip ends with sweet memories. Have a safe flight.",
+    
+    "DMK AIRPORT TO PATTAYA HOTEL - PVT": "Arrival at Don Mueang Airport (DMK) - meet & greet and transfer to your Pattaya hotel. overnight stay at hotel.",
+    
+    "PATTAYA HOTEL TO DMK AIRPORT - PVT": "After breakfast, checkout from your hotel. You will be picked up and transferred to Don Mueang Airport (DMK) to catch your flight. Your trip ends with sweet memories. Have a safe flight.",
+    
+    "DMK AIRPORT TO KRABI HOTEL - PVT": "Arrival at Don Mueang Airport (DMK) - meet & greet and transfer to your Krabi hotel. overnight stay at hotel.",
+    
+    "KRABI HOTEL TO DMK AIRPORT - PVT": "After breakfast, checkout from your hotel. You will be picked up and transferred to Don Mueang Airport (DMK) to catch your flight. Your trip ends with sweet memories. Have a safe flight.",
+
+    "BANGKOK TEMPLE TOUR": "Bangkok Temple Tour - Transfers if included + Ticket if Includeds. After breakfast from the hotel, you will pick from hotel lobby and the pickup timing will be in between 10:30am - 10:45am drop will be around 02:00 pm to 02:30 pm. Half Day Temple Tour Bangkok Duration: 4 hours (approx). Half day Bangkok temple tour includes:- WAT BENCHAMABOPHIT (THE MARBLE TEMPLE) AND WAT TRAIMIT (THE GOLDEN BUDDHA TEMPLE). Get picked up from your hotel in Bangkok and sit comfortably and prepare yourself for the upcoming wonderful journey and get ready to explore some of the iconic locations in Bangkok. Embark on this 4-hour trip to the iconic temples of Bangkok and learn about the culture and traditions of Thailand. Interact with the locals and make some friends. Start your half-day temple tour in Bangkok by visiting the Wat Benchamabophit, which is also called Marble Temple. Stop at this Marble Temple for 1 hour and see the outstanding combination of Italian Carrara marble and classical Thai architecture. After that, head over to the Wat Traimit, Temple of the Golden Buddha. It's officially titled Phra Phuttha Maha Suwana Patimakon, which is a golden Maravijaya Attitude seated Buddharupa statue and weighs around 5.5 tonnes.",
+
+    "BANGKOK TEMPLE TOUR (GOLDEN BUDDHA + MARBLE BUDDHA + GEMS GALLERY)": "Bangkok Temple Tour (Golden Buddha + Marble Buddha + Gems Gallery) - Transfers if included + Ticket if Includeds. After breakfast from the hotel, you will pick from hotel lobby and the pickup timing will be in between 10:30am - 10:45am drop will be around 02:00 pm to 02:30 pm. Duration: 4 hours (approx). This specific tour includes:- WAT BENCHAMABOPHIT (THE MARBLE TEMPLE), WAT TRAIMIT (THE GOLDEN BUDDHA TEMPLE), AND GEMS GALLERY. Get picked up from your hotel in Bangkok and sit comfortably and prepare yourself for the upcoming wonderful journey. Start your tour by visiting the Wat Benchamabophit, which is also called Marble Temple. Stop at this Marble Temple for 1 hour and see the outstanding combination of Italian Carrara marble and classical Thai architecture. After that, head over to the Wat Traimit, Temple of the Golden Buddha. It's officially titled Phra Phuttha Maha Suwana Patimakon, which is a golden Maravijaya Attitude seated Buddharupa statue and weighs around 5.5 tonnes. Finally, visit the Gems Gallery where you can learn about Thailand's famous gem industry and see beautiful jewelry craftsmanship.",
   };
   
   // Clean and normalize the input place
@@ -337,7 +392,7 @@ function getPlaceDescription(place) {
   }
 
   Logger.log('No information found from any source');
-  return "No travel information found for this location. Please try searching with a more specific name or check the spelling.";
+  return `Enjoy your ${place} Tour`;
 }
 
 function getCombinedPlaceIntro(place) {
@@ -481,16 +536,20 @@ function generateFullVoucher() {
   const clientName = sheet.getRange('B1').getValue();
   const bookingCode = sheet.getRange('B2').getValue();
   const destination = sheet.getRange('B3').getValue();
+  const startDate = formatDate(sheet.getRange('B4').getValue());
+  const endDate = formatDate(sheet.getRange('C4').getValue());
+  const amount = sheet.getRange('B20').getValue();
 
-  // Get all hotel rows (A13:C21)
-  const hotelRows = sheet.getRange('A13:C21').getValues().filter(row => row[0] || row[1] || row[2]);
-  // Get first hotel, start date, end date for summary
+  // Get all hotel rows (A13:C19)
+  const hotelRows = sheet.getRange('A13:C19').getValues().filter(row => row[0] || row[1] || row[2]);
+  // Get first hotel for summary
   const hotel = hotelRows.length > 0 ? hotelRows[0][0] : '';
-  const startDate = hotelRows.length > 0 ? hotelRows[0][1] : '';
-  const endDate = hotelRows.length > 0 ? hotelRows[0][2] : '';
 
   // Get all flight details (B5:B11)
   const flightDetails = sheet.getRange('B5:B11').getValues().flat().filter(String);
+
+  // Get note from B21
+  const note = sheet.getRange('B21').getValue();
 
   // Get or create a copy of the template document
   let docCopy;
@@ -550,9 +609,9 @@ function generateFullVoucher() {
   const infoRows = [
     ["Client Name:", clientName || ''],
     ["Booking Code:", bookingCode || ''],
-    ["Trip Start Date:", startDate || ''],
-    ["Trip End Date:", endDate || ''],
-    ["Destination:", destination || '']
+    ["Trip Duration:", `${startDate} to ${endDate}`],
+    ["Destination:", destination || ''],
+    ["Amount:", amount || '']
   ];
   
   infoRows.forEach(([label, value]) => {
@@ -597,13 +656,42 @@ function generateFullVoucher() {
     .setFontFamily("DM Serif Display");
   
   if (hotelRows.length > 0) {
-    hotelRows.forEach(row => {
+    // Filter out any rows that don't have a hotel name
+    const validHotelRows = hotelRows.filter(row => row[0] && row[0].trim() !== '');
+    
+    validHotelRows.forEach((row, index) => {
       const [hotelName, checkIn, checkOut] = row;
-      const hotelLine = body.appendParagraph(`${hotelName}:        Check-in: ${checkIn || 'Not specified'}, Check-out: ${checkOut || 'Not specified'}`);
+      // Add hotel name with number
+      const hotelLine = body.appendParagraph(`${index + 1}. ${hotelName}:`);
       hotelLine.setFontSize(12).setFontFamily("DM Serif Display");
+      
+      // Add check-in/check-out details on next line
+      const detailsLine = body.appendParagraph(`Check-in: ${formatDate(checkIn) || 'Not specified'} & Check-out: ${formatDate(checkOut) || 'Not specified'}`);
+      detailsLine.setFontSize(12).setFontFamily("DM Serif Display");
+      
+      // Add a blank line after each hotel entry
+      body.appendParagraph('').setFontSize(8).setFontFamily("DM Serif Display");
     });
   } else {
     body.appendParagraph('No hotel details available').setFontSize(12).setFontFamily("DM Serif Display");
+  }
+
+  // Add Note Section if there's a note
+  if (note && note.trim() !== '') {
+    body.appendParagraph('').setFontSize(4).setFontFamily("DM Serif Display");
+    
+    const noteHeader = body.appendParagraph("IMPORTANT NOTE");
+    noteHeader.setHeading(DocumentApp.ParagraphHeading.HEADING2)
+      .setFontSize(14)
+      .setAlignment(DocumentApp.HorizontalAlignment.LEFT)
+      .setFontFamily("DM Serif Display");
+    
+    const noteContent = body.appendParagraph(note);
+    noteContent.setFontSize(9)
+      .setFontFamily("DM Serif Display")
+      .setForegroundColor('#666666')
+      .setLineSpacing(1.0)
+      .setSpacingAfter(0);
   }
   
   // Add page break before Day-By-Day Summary
@@ -639,7 +727,7 @@ function generateFullVoucher() {
   // Add each day to the summary
   for (const day of sortedDays) {
     const dayActivities = activitiesByDay[day];
-    const date = dayActivities[0][dateIdx];
+    const date = formatDate(dayActivities[0][dateIdx]);
     
     for (const activity of dayActivities) {
       const sightseeing = activity[sightseeingIdx];
@@ -667,7 +755,7 @@ function generateFullVoucher() {
   // Add day-by-day detailed itinerary
   for (const day of sortedDays) {
     const dayActivities = activitiesByDay[day];
-    const date = dayActivities[0][dateIdx];
+    const date = formatDate(dayActivities[0][dateIdx]);
 
     const dayHeader = body.appendParagraph(`DAY ${day} - ${date}`);
     dayHeader.setHeading(DocumentApp.ParagraphHeading.HEADING3).setFontSize(12).setBold(true).setFontFamily("DM Serif Display");
@@ -754,6 +842,16 @@ function formatTime(value) {
   if (typeof value === 'string') return value;
   if (Object.prototype.toString.call(value) === '[object Date]') {
     return Utilities.formatDate(value, Session.getScriptTimeZone(), 'hh:mm a');
+  }
+  return value.toString();
+}
+
+// Add new function for date formatting
+function formatDate(value) {
+  if (!value) return '';
+  if (typeof value === 'string') return value;
+  if (Object.prototype.toString.call(value) === '[object Date]') {
+    return Utilities.formatDate(value, Session.getScriptTimeZone(), 'dd/MM/yyyy');
   }
   return value.toString();
 }

@@ -5,6 +5,7 @@ import React from 'react';
 import { Bars3Icon } from '@heroicons/react/24/outline';
 import Drawer from "./Drawer";
 import Drawerdata from "./Drawerdata";
+import { useRouter } from 'next/navigation';
 
 interface NavigationItem {
     name: string;
@@ -23,6 +24,7 @@ function classNames(...classes: string[]) {
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = React.useState(false);
+    const router = useRouter();
 
     return (
         <Disclosure as="nav" className="navbar" style={{
@@ -70,16 +72,12 @@ const Navbar = () => {
                             
                         {/* GET STARTED BUTTON */}
                         <div className="hidden lg:flex">
-                            <Link 
-                                href="#get-started" 
-                                className="text-base font-medium transition-colors duration-300 rounded-full text-black py-2 px-6 bg-white"
-                                style={{ 
-                                    fontWeight: 500,
-                                    boxShadow: '0 0 10px rgba(255, 165, 0, 0.3)'
-                                }}
+                            <button
+                                onClick={() => router.push('/login')}
+                                className="px-6 py-2 rounded-md bg-black text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 transition-all duration-300 border-2 border-black hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-500 hover:text-white"
                             >
-                                Get Started
-                            </Link>
+                                Login
+                            </button>
                         </div>
 
                         {/* DRAWER FOR MOBILE VIEW */}

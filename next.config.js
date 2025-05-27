@@ -8,6 +8,7 @@ const nextConfig = {
         hostname: '**',
       },
     ],
+    unoptimized: true, // This will allow any image source
   },
 };
 
