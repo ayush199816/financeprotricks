@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { StarIcon } from '@heroicons/react/24/solid';
@@ -18,68 +18,7 @@ interface CourseType {
     bestSeller: boolean;
 }
 
-const courseData: CourseType[] = [
-    {
-        title: 'Financial Planning Fundamentals',
-        instructor: 'Robert Morgan',
-        rating: 4.4,
-        price: 20,
-        classes: 12,
-        students: 150,
-        imgSrc: '/images/featured/feat1.jpg',
-        bestSeller: true,
-    },
-    {
-        title: 'Investment Strategies for Beginners',
-        instructor: 'Sarah Johnson',
-        rating: 4.5,
-        price: 20,
-        classes: 12,
-        students: 130,
-        bestSeller: true,
-        imgSrc: '/images/featured/feat2.jpg',
-    },
-    {
-        title: 'Retirement Planning Masterclass',
-        instructor: 'Michael Chen',
-        rating: 5,
-        price: 20,
-        classes: 12,
-        students: 120,
-        bestSeller: true,
-        imgSrc: '/images/featured/feat1.jpg',
-    },
-    {
-        title: 'Tax Optimization Strategies',
-        instructor: 'Emily Rodriguez',
-        rating: 4.3,
-        price: 20,
-        classes: 10,
-        students: 95,
-        bestSeller: false,
-        imgSrc: '/images/featured/feat2.jpg',
-    },
-    {
-        title: 'Stock Market Analysis',
-        instructor: 'David Williams',
-        rating: 4.7,
-        price: 20,
-        classes: 14,
-        students: 165,
-        bestSeller: true,
-        imgSrc: '/images/featured/feat1.jpg',
-    },
-    {
-        title: 'Real Estate Investment',
-        instructor: 'Jennifer Lee',
-        rating: 4.6,
-        price: 20,
-        classes: 12,
-        students: 110,
-        bestSeller: false,
-        imgSrc: '/images/featured/feat2.jpg',
-    }
-];
+// We'll fetch this data from the API now
 
 // Render star ratings
 const RatingStars = ({ rating }: { rating: number }) => {
@@ -103,7 +42,44 @@ const RatingStars = ({ rating }: { rating: number }) => {
 };
 
 const Featured = () => {
+    const [courseData, setCourseData] = useState<CourseType[]>([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState<string | null>(null);
     const [flipped, setFlipped] = useState<number | null>(null);
+    
+    // Fetch courses from the API
+    useEffect(() => {
+        const fetchCourses = async () => {
+            try {
+                const response = await fetch('/api/admin/courses');
+                if (!response.ok) {
+                    throw new Error('Failed to fetch courses');
+                }
+                const data = await response.json();
+                
+                // Transform the data to match our CourseType interface
+                const transformedData: CourseType[] = data.map((course: any) => ({
+                    title: course.title,
+                    instructor: course.instructor,
+                    rating: course.rating,
+                    price: course.price,
+                    classes: course.classes,
+                    students: course.students,
+                    imgSrc: course.img_src,
+                    bestSeller: course.best_seller
+                }));
+                
+                setCourseData(transformedData);
+            } catch (err) {
+                console.error('Error fetching courses:', err);
+                setError('Failed to load courses. Please try again later.');
+            } finally {
+                setLoading(false);
+            }
+        };
+        
+        fetchCourses();
+    }, []);
     const settings = {
         dots: true,
         infinite: true,
@@ -145,6 +121,14 @@ const Featured = () => {
     return (
         <div className="bg-black py-20 px-4 sm:px-6 lg:px-8" id="courses-section">
             <div className="mx-auto max-w-7xl">
+                {loading ? (
+                    <div className="flex justify-center items-center h-64">
+                        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-orange-500"></div>
+                    </div>
+                ) : error ? (
+                    <div className="text-center text-red-500 py-10">{error}</div>
+                ) : (
+                <>
                 <div className="text-center mb-16">
                     <h3 className="text-4xl sm:text-5xl font-bold mb-4" style={{
                         background: 'linear-gradient(to right, #FF8C00, #FF4500, #FFD700)',
@@ -248,6 +232,8 @@ const Featured = () => {
                         ))}
                     </Slider>
                 </div>
+                </>
+                )}
             </div>
         </div>
     );

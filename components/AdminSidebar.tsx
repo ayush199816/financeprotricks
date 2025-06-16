@@ -9,6 +9,7 @@ const adminMenuItems = [
   { name: 'Article', href: '/admin/articles' },
   { name: 'Testimonials', href: '/admin/testimonials' },
   { name: 'Courses', href: '/admin/courses' },
+  { name: 'Subscription Plans', href: '/admin/subscription-plans' },
   { name: 'Users', href: '/admin/users' },
   { name: 'Sales', href: '/admin/sales' },
 ];

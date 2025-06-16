@@ -1,97 +1,59 @@
 "use client"
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Switch } from '@headlessui/react';
 import Image from 'next/image';
 
-
-const names = [
-    {
-        heading: "Startup",
-        price: 41,
-        user: 'per user, per month',
-        button: "Start My 15-day Trial",
-        profiles: '5 Social Profiles',
-        posts: '5 Scheduled Posts Per Profile',
-        templates: "400+ Templated",
-        view: "Calendar View",
-        support: '24/7 Support',
-        category: 'yearly'
-    },
-    {
-        heading: "Business",
-        price: 29,
-        user: 'per user, per month',
-        button: "Start My 15-day Trial",
-        profiles: '10 Social Profiles',
-        posts: '5 Scheduled Posts Per Profile',
-        templates: "600+ Templated",
-        view: "Calendar View",
-        support: '24/7 VIP Support',
-        category: 'yearly'
-    },
-    {
-        heading: "Agency",
-        price: 139,
-        user: 'per user, per month',
-        button: "Start My 15-day Trial",
-        profiles: '100 Social Profiles',
-        posts: '100 Scheduled Posts Per Profile',
-        templates: "800+ Templated",
-        view: "Calendar View",
-        support: '24/7 VIP Support',
-        category: 'yearly'
-    },
-    {
-        heading: "Agency",
-        price: 139,
-        user: 'per user, per yearly',
-        button: "Start My 15-day Trial",
-        profiles: '100 Social Profiles',
-        posts: '100 Scheduled Posts Per Profile',
-        templates: "800+ Templated",
-        view: "Calendar View",
-        support: '24/7 VIP Support',
-        category: 'monthly'
-    },
-    {
-        heading: "Startup",
-        price: 41,
-        user: 'per user, per yearly',
-        button: "Start My 15-day Trial",
-        profiles: '5 Social Profiles',
-        posts: '5 Scheduled Posts Per Profile',
-        templates: "400+ Templated",
-        view: "Calendar View",
-        support: '24/7 Support',
-        category: 'monthly'
-    },
-    {
-        heading: "Business",
-        price: 29,
-        user: 'per user, per yearly',
-        button: "Start My 15-day Trial",
-        profiles: '10 Social Profiles',
-        posts: '5 Scheduled Posts Per Profile',
-        templates: "600+ Templated",
-        view: "Calendar View",
-        support: '24/7 VIP Support',
-        category: 'monthly'
-    },
-
-
-]
+// Define the subscription plan type
+type SubscriptionPlanType = {
+    id: string;
+    heading: string;
+    price: number;
+    user: string;
+    button: string;
+    profiles: string;
+    posts: string;
+    templates: string;
+    view: string;
+    support: string;
+    category: string;
+};
 
 const Manage = () => {
-    
     const [enabled, setEnabled] = useState(false);
     const [selectedCategory, setSelectedCategory] = useState('monthly');
+    const [plans, setPlans] = useState<SubscriptionPlanType[]>([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState<string | null>(null);
+
+    // Fetch subscription plans on component mount
+    useEffect(() => {
+        const fetchPlans = async () => {
+            try {
+                const response = await fetch('/api/subscription-plans');
+                
+                if (!response.ok) {
+                    throw new Error('Failed to fetch subscription plans');
+                }
+                
+                const data = await response.json();
+                setPlans(data);
+                setLoading(false);
+            } catch (err) {
+                console.error('Error fetching subscription plans:', err);
+                setError('Failed to load subscription plans');
+                setLoading(false);
+            }
+        };
+        
+        fetchPlans();
+    }, []);
 
     const toggleEnabled = () => {
         setEnabled(!enabled);
         setSelectedCategory(enabled ? 'monthly' : 'yearly');
     }
 
-    const filteredData = names.filter(items => items.category === selectedCategory);
+    const filteredData = plans.filter(items => items.category === selectedCategory);
 
     return (
         <div id="services-section">
@@ -110,41 +72,50 @@ const Manage = () => {
 
 
                 <div className='md:flex md:justify-around mt-20'>
-                    <div className='flex gap-5 justify-center md:justify-start items-center'>
-                        <Image src="/images/manage/right.svg" alt="right-icon" width={21} height={14} style={{
-                            filter: 'invert(79%) sepia(53%) saturate(1095%) hue-rotate(330deg) brightness(101%) contrast(96%)'
-                        }} />
-                        <h4 className='text-lg font-semibold' style={{
-                            background: 'linear-gradient(to right, #FF8C00, #FF4500, #FFD700)',
-                            WebkitBackgroundClip: 'text',
-                            WebkitTextFillColor: 'transparent',
-                            backgroundClip: 'text',
-                        }}>Free 15-day trial</h4>
-                    </div>
-                    <div className='flex gap-5 justify-center md:justify-start items-center'>
-                        <Image src="/images/manage/right.svg" alt="right-icon" width={21} height={14} style={{
-                            filter: 'invert(79%) sepia(53%) saturate(1095%) hue-rotate(330deg) brightness(101%) contrast(96%)'
-                        }} />
-                        <h4 className='text-lg font-semibold' style={{
-                            background: 'linear-gradient(to right, #FF8C00, #FF4500, #FFD700)',
-                            WebkitBackgroundClip: 'text',
-                            WebkitTextFillColor: 'transparent',
-                            backgroundClip: 'text',
-                        }}>Unlimited Team Members</h4>
-                    </div>
-                    <div className='flex gap-5 justify-center md:justify-start items-center'>
-                        <Image src="/images/manage/right.svg" alt="right-icon" width={21} height={14} style={{
-                            filter: 'invert(79%) sepia(53%) saturate(1095%) hue-rotate(330deg) brightness(101%) contrast(96%)'
-                        }} />
-                        <h4 className='text-lg font-semibold' style={{
-                            background: 'linear-gradient(to right, #FF8C00, #FF4500, #FFD700)',
-                            WebkitBackgroundClip: 'text',
-                            WebkitTextFillColor: 'transparent',
-                            backgroundClip: 'text',
-                        }}>Cancel Anytime</h4>
-                    </div>
+                    {loading ? (
+                        <div className="flex justify-center items-center w-full py-10">
+                            <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-red-500"></div>
+                        </div>
+                    ) : error ? (
+                        <div className="text-center text-red-500 py-10 w-full">{error}</div>
+                    ) : (
+                        <div className="flex flex-col md:flex-row md:justify-around w-full gap-4">
+                            <div className='flex gap-5 justify-center md:justify-start items-center'>
+                                <Image src="/images/manage/right.svg" alt="right-icon" width={21} height={14} style={{
+                                    filter: 'invert(79%) sepia(53%) saturate(1095%) hue-rotate(330deg) brightness(101%) contrast(96%)'
+                                }} />
+                                <h4 className='text-lg font-semibold' style={{
+                                    background: 'linear-gradient(to right, #FF8C00, #FF4500, #FFD700)',
+                                    WebkitBackgroundClip: 'text',
+                                    WebkitTextFillColor: 'transparent',
+                                    backgroundClip: 'text',
+                                }}>Free 15-day trial</h4>
+                            </div>
+                            <div className='flex gap-5 justify-center md:justify-start items-center'>
+                                <Image src="/images/manage/right.svg" alt="right-icon" width={21} height={14} style={{
+                                    filter: 'invert(79%) sepia(53%) saturate(1095%) hue-rotate(330deg) brightness(101%) contrast(96%)'
+                                }} />
+                                <h4 className='text-lg font-semibold' style={{
+                                    background: 'linear-gradient(to right, #FF8C00, #FF4500, #FFD700)',
+                                    WebkitBackgroundClip: 'text',
+                                    WebkitTextFillColor: 'transparent',
+                                    backgroundClip: 'text',
+                                }}>Unlimited Team Members</h4>
+                            </div>
+                            <div className='flex gap-5 justify-center md:justify-start items-center'>
+                                <Image src="/images/manage/right.svg" alt="right-icon" width={21} height={14} style={{
+                                    filter: 'invert(79%) sepia(53%) saturate(1095%) hue-rotate(330deg) brightness(101%) contrast(96%)'
+                                }} />
+                                <h4 className='text-lg font-semibold' style={{
+                                    background: 'linear-gradient(to right, #FF8C00, #FF4500, #FFD700)',
+                                    WebkitBackgroundClip: 'text',
+                                    WebkitTextFillColor: 'transparent',
+                                    backgroundClip: 'text',
+                                }}>Cancel Anytime</h4>
+                            </div>
+                        </div>
+                    )}
                 </div>
-
 
                 <div className='mt-6 relative'>
                     <div className='dance-text mb-5' style={{
@@ -247,6 +218,11 @@ const Manage = () => {
                             } : {}}>{items.support}</h3>
                         </div>
                     ))}
+                    {filteredData.length === 0 && !loading && !error && (
+                        <div className="text-center w-full py-10 text-gray-400">
+                            No subscription plans found for this category.
+                        </div>
+                    )}
                 </div>
 
             </div>
